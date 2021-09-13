@@ -129,8 +129,6 @@ C:\Users\mshaik\demo_projects\RecipesMVC\obj\Debug\net5.0\scopedcss\bundle\Recip
 C:\Users\mshaik\demo_projects\RecipesMVC\obj\Debug\net5.0\RecipesMVC.TagHelpers.input.cache
 C:\Users\mshaik\demo_projects\RecipesMVC\obj\Debug\net5.0\RecipesMVC.TagHelpers.output.cache
 C:\Users\mshaik\demo_projects\RecipesMVC\obj\Debug\net5.0\RecipesMVC.RazorCoreGenerate.cache
-C:\Users\mshaik\demo_projects\RecipesMVC\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\mshaik\demo_projects\RecipesMVC\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\mshaik\demo_projects\RecipesMVC\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\mshaik\demo_projects\RecipesMVC\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\mshaik\demo_projects\RecipesMVC\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -145,3 +143,5 @@ C:\Users\mshaik\demo_projects\RecipesMVC\obj\Debug\net5.0\ref\RecipesMVC.dll
 C:\Users\mshaik\demo_projects\RecipesMVC\obj\Debug\net5.0\RecipesMVC.pdb
 C:\Users\mshaik\demo_projects\RecipesMVC\obj\Debug\net5.0\RecipesMVC.genruntimeconfig.cache
 C:\Users\mshaik\demo_projects\RecipesMVC\obj\Debug\net5.0\Razor\Views\Recipes\Index.cshtml.g.cs
+C:\Users\mshaik\demo_projects\RecipesMVC\obj\Debug\net5.0\Razor\Views\Recipes\FindRecipe.cshtml.g.cs
+C:\Users\mshaik\demo_projects\RecipesMVC\obj\Debug\net5.0\Razor\Views\Recipes\MyRecipes.cshtml.g.cs
