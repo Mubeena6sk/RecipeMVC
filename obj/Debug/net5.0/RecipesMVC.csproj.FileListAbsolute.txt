@@ -142,6 +142,7 @@ C:\Users\mshaik\demo_projects\RecipesMVC\obj\Debug\net5.0\RecipesMVC.dll
 C:\Users\mshaik\demo_projects\RecipesMVC\obj\Debug\net5.0\ref\RecipesMVC.dll
 C:\Users\mshaik\demo_projects\RecipesMVC\obj\Debug\net5.0\RecipesMVC.pdb
 C:\Users\mshaik\demo_projects\RecipesMVC\obj\Debug\net5.0\RecipesMVC.genruntimeconfig.cache
-C:\Users\mshaik\demo_projects\RecipesMVC\obj\Debug\net5.0\Razor\Views\Recipes\Index.cshtml.g.cs
 C:\Users\mshaik\demo_projects\RecipesMVC\obj\Debug\net5.0\Razor\Views\Recipes\FindRecipe.cshtml.g.cs
 C:\Users\mshaik\demo_projects\RecipesMVC\obj\Debug\net5.0\Razor\Views\Recipes\MyRecipes.cshtml.g.cs
+C:\Users\mshaik\demo_projects\RecipesMVC\bin\Debug\net5.0\log4net.dll
+C:\Users\mshaik\demo_projects\RecipesMVC\bin\Debug\net5.0\Microsoft.Extensions.Logging.Log4Net.AspNetCore.dll

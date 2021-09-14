@@ -112,7 +112,7 @@ namespace RecipesMVC.Controllers
 
                 using (var httpClient = new HttpClient())
                 {
-                    using (var response = await httpClient.GetAsync("https://localhost:44349/myrecipes"))
+                    using (var response = await httpClient.GetAsync("https://localhost:44349/myrecipe"))
                     {
                         string apiResponse = await response.Content.ReadAsStringAsync();
                         rc = JsonConvert.DeserializeObject<List<RecipeClass>>(apiResponse);
@@ -122,19 +122,29 @@ namespace RecipesMVC.Controllers
             }
 
         }
-        [HttpPost]
-        public async Task<IActionResult> Starred(int id)
-        {
 
-                using (var httpClient = new HttpClient())
+        [HttpGet]
+        public async Task<ActionResult> Starred(int id)
+        {
+            
+            RecipeClass r = new RecipeClass();
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync("https://localhost:44349/api/Recipes/" + id))
                 {
-                    using (var response = await httpClient.PostAsync("https://localhost:44349/myrecipes/"+id))
-                    {
-                        
-                    }
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    r = JsonConvert.DeserializeObject<RecipeClass>(apiResponse);
+                    StringContent content1 = new StringContent(JsonConvert.SerializeObject(r), Encoding.UTF8, "application/json");
+                    var response_2 = await httpClient.PostAsync("https://localhost:44349/myrecipe/" + id, content1);
                 }
-            return NoContent();
+
             }
+            return RedirectToAction("MyRecipes");
         }
+
+
+  
     }
+
+}
 
