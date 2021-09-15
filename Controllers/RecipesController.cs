@@ -55,12 +55,6 @@ namespace RecipesMVC.Controllers
             }
         }
 
-        //public ActionResult FindRecipe()
-        //{
-        //    return View();
-        //}
-
-
         [HttpGet]
         public async Task<IActionResult> FindRecipe(string ingre)
         {
@@ -126,7 +120,7 @@ namespace RecipesMVC.Controllers
         [HttpGet]
         public async Task<ActionResult> Starred(int id)
         {
-            
+
             RecipeClass r = new RecipeClass();
             using (var httpClient = new HttpClient())
             {
@@ -143,8 +137,37 @@ namespace RecipesMVC.Controllers
         }
 
 
-  
-    }
+        [HttpGet]
+        public async Task<ActionResult> Details(int id)
+        {
+            RecipeClass r = new RecipeClass();
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync("https://localhost:44349/api/Recipes/" + id))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    r = JsonConvert.DeserializeObject<RecipeClass>(apiResponse);
+                }
+            }
+            return View(r);
+        }
 
+
+        [HttpGet]
+        public async Task<ActionResult> DeleteRecipe(int id)
+        {
+            //RecipeClass r = new RecipeClass();
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.DeleteAsync("https://localhost:44349/api/Recipes/delete/" + id))
+                {
+                    //string apiResponse = await response.Content.ReadAsStringAsync();
+                    //r = JsonConvert.DeserializeObject<RecipeClass>(apiResponse);
+                }
+            }
+            return RedirectToAction("MyRecipes");
+        }
+
+    }
 }
 

@@ -1,14 +1,13 @@
 ﻿@model IEnumerable<RecipesMVC.Models.RecipeClass>
 
-@{
-    ViewData["Title"] = "MyRecipes";
-}
 
-<h1>MyRecipes</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+@{ ViewData["Title"] = "MyRecipes"; }
+
+
+
+<h1>My Recipes</h1>
+
 <table class="table">
     <thead>
         <tr>
@@ -18,25 +17,26 @@
             <th>
                 @Html.DisplayNameFor(model => model.Rname)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Instructions)
-            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rid)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rname)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Instructions)
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Rid)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Rname)
+    </td>
+    @*<td>
+            @Html.DisplayFor(modelItem => item.Instructions)
+        </td>*@
+<td>
+    <a asp-action="Details" asp-route-id="@item.Rid">Details</a>
+    <a asp-action="DeleteRecipe" asp-route-id="@item.Rid">Delete</a>
+</td>
+</tr>}
     </tbody>
 </table>
