@@ -8,16 +8,18 @@ namespace RecipesMVC.Models
     public class RecipeClass
     {
 
-            public RecipeClass()
-            {
-                IngredientsIndices = new HashSet<IIClass>();
-            }
+        public RecipeClass()
+        {
+            IngredientsIndices = new HashSet<IIClass>();
+        }
 
-            public int Rid { get; set; }
-            public string Rname { get; set; }
-            public string Instructions { get; set; }
+        public int Rid { get; set; }
+        public string Rname { get; set; }
+        public string Rcuisine { get; set; }
+        public byte[] Rimage { get; set; }
+        public string Instructions { get; set; }
 
-            public virtual ICollection<IIClass> IngredientsIndices { get; set; }
+        public virtual ICollection<IIClass> IngredientsIndices { get; set; }
         }
     }
 

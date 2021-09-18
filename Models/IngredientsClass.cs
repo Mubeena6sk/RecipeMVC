@@ -9,15 +9,18 @@ namespace RecipesMVC.Models
     {
         public string IName;
 
-        public IngredientsClass()
+        public partial class Ingredient
         {
-            IngredientsIndices = new HashSet<IIClass>();
+            public Ingredient()
+            {
+                IngredientsIndices = new HashSet<IIClass>();
+            }
+
+            public int Iid { get; set; }
+            // public string Iname { get; set; }
+
+
+            public virtual ICollection<IIClass> IngredientsIndices { get; set; }
         }
-
-        public int Iid { get; set; }
-      //  public int IName { get; set; }
-
-
-        public virtual ICollection<IIClass> IngredientsIndices { get; set; }
     }
 }

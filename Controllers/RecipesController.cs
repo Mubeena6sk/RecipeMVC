@@ -63,12 +63,14 @@ namespace RecipesMVC.Controllers
                 if (ingre != null)
                 {
                     List<RecipeClass> rc = new List<RecipeClass>();
+                    var apiResponse="";
 
                     using (var httpClient = new HttpClient())
                     {
                         using (var response = await httpClient.GetAsync("https://localhost:44349/api/Recipes/item/" + ingre))
                         {
-                            string apiResponse = await response.Content.ReadAsStringAsync();
+                             apiResponse = await response.Content.ReadAsStringAsync();
+                          //  var respContent = await response.Content.ReadAsStringAsync();
                             rc = JsonConvert.DeserializeObject<List<RecipeClass>>(apiResponse);
                         }
                     }
@@ -89,6 +91,50 @@ namespace RecipesMVC.Controllers
                     }
 
                     return View(rc);
+                }
+
+
+            }
+
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> FindRecipebycuisine(string cuisine)
+        {
+            using (var client = new HttpClient())
+            {
+                if (cuisine != null)
+                {
+                    List<RecipeClass> rc = new List<RecipeClass>();
+                    var apiResponse = "";
+
+                    using (var httpClient = new HttpClient())
+                    {
+                        using (var response = await httpClient.GetAsync("https://localhost:44349/api/Recipes/items/" + cuisine))
+                        {
+                            apiResponse = await response.Content.ReadAsStringAsync();
+                            //  var respContent = await response.Content.ReadAsStringAsync();
+                              rc = JsonConvert.DeserializeObject<List<RecipeClass>>(apiResponse);
+                        }
+                    }
+                    return View("FindRecipe",rc);
+                }
+
+                else
+                {
+                    List<RecipeClass> rc = new List<RecipeClass>();
+
+                    using (var httpClient = new HttpClient())
+                    {
+                        using (var response = await httpClient.GetAsync("https://localhost:44349/api/Recipes"))
+                        {
+                            string apiResponse = await response.Content.ReadAsStringAsync();
+                            rc = JsonConvert.DeserializeObject<List<RecipeClass>>(apiResponse);
+                        }
+                    }
+
+                    return View("FindRecipe",rc);
                 }
 
 

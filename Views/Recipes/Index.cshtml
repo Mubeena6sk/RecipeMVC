@@ -1,13 +1,39 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿
 @section css {
     <link href="@Url.Content("~/css/Indexstyle.css")" rel="stylesheet" />
 }
-<body style="margin-top: 50px; background-image: url('images/bg.jpg'); background-size: cover; background-repeat: no-repeat; overflow-x: hidden;">
-    <div class="blob" style=" background: rgba(255, 255, 255, 0.7); width: 900px; height: 250px; border-radius: 30px; text-align: center; line-height: 250px; color: white; margin: 0 auto; font-size: 50px; color: black;"><b><i>WELCOME TO URECIPE</i></b></div>
-</body>
+<body style=" background-image: url('images/bg1.jpg'); background-size: cover; background-repeat: no-repeat; overflow-x: hidden; margin-left:40px;margin-right:40px">
+    <div style=" display:block;background: rgba(255, 255, 255, 0.7); width: 900px; height: 250px; border-radius: 30px; color: white; margin: 0 auto;color: black;">
+        <div style="padding-top: 30px; font-style: italic;font-size: 22px; line-height: 22px; margin-bottom: 25px; text-align: center"><b>One stop for yummy and exotic recipes</b></div>
+        <div style="font-size:60px;text-align:center"><b>WELCOME TO URECIPE</b></div>
+        <div style="font-size: 22px;font-style: italic;line-height: 22px;padding-top: 20px;text-align:center"><b>Explore and Devour</b></div>
+    </div>
 
+
+    <div style="margin: 30px;padding-top:40px">
+        <section id="services">
+            <div class="container-fluid" style="padding-top:40px">
+                <div class="row text-center" style="justify-content:center">
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <a asp-controller="Recipes" asp-action="FindRecipe"><i class="fas fa-utensils fa-stack-1x fa-inverse text-inverse"></i></a>
+                        </span>
+                        <h4 class="service-heading">View Recipes</h4>
+                        <p class="text-muted">View and search for recipes</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <a asp-controller="Recipes" asp-action="MyRecipes">
+                            <i class="far fa-list-alt fa-stack-1x fa-inverse text-inverse"></i></a>
+                        </span>
+                        <h4 class="service-heading">Favourite Recipes</h4>
+                        <p class="text-muted">Make a collection of your favourite recipes</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
 

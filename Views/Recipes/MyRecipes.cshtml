@@ -1,47 +1,80 @@
 ﻿@model IEnumerable<RecipesMVC.Models.RecipeClass>
 
+@{
+    ViewData["Title"] = "MyRecipes";
+}
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color:cadetblue">
+    <div class="row">
+        <div class="col-9">
+            <form asp-controller="Recipes" asp-action="FindRecipe" method="get">
+                <p>
+                    <label style="color:white">Search using ingredient: </label> <input type="text" name="ingre" />
+                    <input type="submit" value="Find" />
+                </p>
+            </form>
+        </div>
+        <div class="col-9">
+            <form asp-controller="Recipes" asp-action="FindRecipebycuisine" method="get">
+                <p>
+                    <label style="color:white">Search using cuisine   : </label> <input type="text" name="cuisine" />
+                    <input type="submit" value="Find" />
+                </p>
+            </form>
+        </div>
+    </div>
 
 
-@{ ViewData["Title"] = "MyRecipes"; }
-
-
-
-<body style="background-color: #d2f8d2;">
-    <h1>My Recipes</h1>
-
-    <table class="table">
+    <!--<table class="table">
         <thead>
             <tr>
                 <th>
-                   S.no.
+                    S.No
                 </th>
                 <th>
-                   Recipe Name
+                    Recipe Name
                 </th>
+                <th>
+                    Cuisine
+                </th>
+                <th>
+                    Image
+                </th>
+
                 <th></th>
             </tr>
         </thead>
-        <tbody>
+        <tbody>-->
+
+    <div class="container ">
+        <div class="row">
             @foreach (var item in Model)
             {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.Rid)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Rname)
-    </td>
-    @*<td>
-            @Html.DisplayFor(modelItem => item.Instructions)
-        </td>*@
-    <td>
-        <a  style="color: #006400; text-decoration: none;"  asp-action="Details" asp-route-id="@item.Rid">Details</a> 
-     </td>
-    <td>
-        <a style="color: #006400; text-decoration: none;" asp-action="DeleteRecipe" asp-route-id="@item.Rid"><i class="fas fa-trash-alt"></i></a>
-    </td>
-</tr>
-}
-        </tbody>
-    </table>
+                <div class="col-lg-4" style="margin-bottom: 40px">
+                    <div class="card h-100">
+                        @{
+                            var base64 = Convert.ToBase64String(item.Rimage);
+                            var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                        }
+                        <img class="card-img-top" src="@imgSrc" alt="Card image" style="width:340px;height:300px">
+                        <div class="card-body">
+                            <h4 class="card-title">@Html.DisplayFor(modelItem => item.Rname)</h4>
+                            <p class="card-text">@Html.DisplayFor(modelItem => item.Rcuisine)</p>
+                            <a style="float:right; color: #006400; text-decoration: none;" asp-action="DeleteRecipe" asp-route-id="@item.Rid"><i class="fas fa-trash-alt"></i></a>
+                            <a asp-action="Details" asp-route-id="@item.Rid" class="btn btn-primary" style="background-color:cadetblue">See Instructions</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
 </body>
+
+
+

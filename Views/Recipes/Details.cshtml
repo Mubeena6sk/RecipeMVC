@@ -4,15 +4,21 @@
 
 @{ ViewData["Title"] = @Html.DisplayFor(model => model.Rname); }
 
+<body style="background-color:cadetblue;color:white">
 
-
-<h1>@Html.DisplayFor(model => model.Rname)</h1>
+    <h1>@Html.DisplayFor(model => model.Rname)</h1>
+    @{
+        var base64 = Convert.ToBase64String(Model.Rimage);
+        var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+    }
 
 
 
 <div>
     <hr />
+    <dt><img src="@imgSrc" style="float:right;width:340px;height:340px"></dt>
     <dl class="row">
+
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Instructions)
         </dt>
@@ -21,6 +27,6 @@
         </dd>
     </dl>
 </div>
-<div>
-    <a asp-action="FindRecipe">Back to List</a>
-</div>
+    <div>
+    </div>
+    </body>
