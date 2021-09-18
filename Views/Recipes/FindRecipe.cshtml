@@ -18,23 +18,24 @@
 </form>
 
 
+<body style="background-color: #d2f8d2;">
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                S.no.
-            </th>
-            <th>
-                Recipe Name
-            </th>
-            <th></th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    S.no.
+                </th>
+                <th>
+                    Recipe Name
+                </th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
 <tr>
     <td>
         @Html.DisplayFor(modelItem => item.Rid)
@@ -43,12 +44,14 @@
         @Html.DisplayFor(modelItem => item.Rname)
     </td>
     <td>
-        <a asp-action="Starred" asp-route-id="@item.Rid"><i class="far fa-star"></i></a>
+        <a style="color: #006400; text-decoration: none;" asp-action="Starred" asp-route-id="@item.Rid"><i class="far fa-star"></i></a>
     </td>
     <td>
-        <a asp-action="Details" asp-route-id="@item.Rid">Details</a>
+        <a style="color: #006400; text-decoration: none;" asp-action="Details" asp-route-id="@item.Rid">Details</a>
 
     </td>
-</tr>}
-    </tbody>
-</table>
+</tr>
+}
+        </tbody>
+    </table>
+</body>

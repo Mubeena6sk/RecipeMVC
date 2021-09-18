@@ -51,7 +51,7 @@ namespace RecipesMVC
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Recipes}/{action=FindRecipe}/");
+                    pattern: "{controller=Recipes}/{action=Index}/");
             });
         }
     }

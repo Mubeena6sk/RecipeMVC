@@ -6,23 +6,24 @@
 
 
 
-<h1>My Recipes</h1>
+<body style="background-color: #d2f8d2;">
+    <h1>My Recipes</h1>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Rid)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Rname)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                   S.no.
+                </th>
+                <th>
+                   Recipe Name
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
 <tr>
     <td>
         @Html.DisplayFor(modelItem => item.Rid)
@@ -33,10 +34,14 @@
     @*<td>
             @Html.DisplayFor(modelItem => item.Instructions)
         </td>*@
-<td>
-    <a asp-action="Details" asp-route-id="@item.Rid">Details</a>
-    <a asp-action="DeleteRecipe" asp-route-id="@item.Rid">Delete</a>
-</td>
-</tr>}
-    </tbody>
-</table>
+    <td>
+        <a  style="color: #006400; text-decoration: none;"  asp-action="Details" asp-route-id="@item.Rid">Details</a> 
+     </td>
+    <td>
+        <a style="color: #006400; text-decoration: none;" asp-action="DeleteRecipe" asp-route-id="@item.Rid"><i class="fas fa-trash-alt"></i></a>
+    </td>
+</tr>
+}
+        </tbody>
+    </table>
+</body>
