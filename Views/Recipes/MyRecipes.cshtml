@@ -10,7 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
-<body style="background-color:cadetblue">
+<body style="background-image: url(https://image.freepik.com/free-vector/seamless-pizza-ingredients_1176-269.jpg)">
     <div class="row">
         <div class="col-9">
             <form asp-controller="Recipes" asp-action="FindRecipe" method="get">
@@ -67,7 +67,7 @@
                             <h4 class="card-title">@Html.DisplayFor(modelItem => item.Rname)</h4>
                             <p class="card-text">@Html.DisplayFor(modelItem => item.Rcuisine)</p>
                             <a style="float:right; color: #006400; text-decoration: none;" asp-action="DeleteRecipe" asp-route-id="@item.Rid"><i class="fas fa-trash-alt"></i></a>
-                            <a asp-action="Details" asp-route-id="@item.Rid" class="btn btn-primary" style="background-color:cadetblue">See Instructions</a>
+                            <a asp-action="Details" asp-route-id="@item.Rid" class="btn btn-primary" style="border-color: black;;background-color: darkgray">See Instructions</a>
                         </div>
                     </div>
                 </div>
